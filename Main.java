@@ -10,47 +10,47 @@ public class Main {
     private static int HijoDrcho(int i) {
         return (2*i + 2);
     }
-    // Metodo para intercambiar  índices del Array arr[]
+    // Metodo para intercambiar  Ã­ndices del Array arr[]
     private static void intercambio(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    private static void apilar(int[] arr, int i, int tamaño) {
-        // Obtener los hijos izquierdo y derecho del nodo() en el índice arr[i]
+    private static void apilar(int[] arr, int i, int tamaÃ±o) {
+        // Obtener los hijos izquierdo y derecho del nodo() en el Ã­ndice arr[i]
         int izda = HijoIzqdo(i);
         int drcha = HijoDrcho(i);
  
         int mayor = i;
-        if (izda < tamaño && arr[izda] > arr[i]) {
+        if (izda < tamaÃ±o && arr[izda] > arr[i]) {
            mayor = izda;
         }
-        if (drcha < tamaño && arr[drcha] > arr[mayor]) {
+        if (drcha < tamaÃ±o && arr[drcha] > arr[mayor]) {
             mayor = drcha;
         }
  
         if (mayor != i){ //mayor != i variable contador
             intercambio(arr, i, mayor);
-            apilar(arr, mayor, tamaño);
+            apilar(arr, mayor, tamaÃ±o);
         }
     }
-        // Función para eliminar un elemento con la mayor prioridad (presente en la raíz)
-        public static int sacar(int[] arr, int tamaño){
+        // FunciÃ³n para eliminar un elemento con la mayor prioridad (presente en la raÃ­z)
+        public static int sacar(int[] arr, int tamaÃ±o){
             // si el monticulo no tiene Elementos
-            if (tamaño <= 0) {
+            if (tamaÃ±o <= 0) {
                 return -1;
             }
      
             int tope = arr[0];
      
-            // sustituir la raíz del montón por el último elemento del Array
+            // sustituir la raÃ­z del montÃ³n por el Ãºltimo elemento del Array
             
-            arr[0] = arr[tamaño-1];
-            apilar(arr, 0, tamaño - 1);
+            arr[0] = arr[tamaÃ±o-1];
+            apilar(arr, 0, tamaÃ±o - 1);
             return tope;
         }
      
-        //Metodo Heapsort ordenamiento de Montículo N() sobre arr[]
+        //Metodo Heapsort ordenamiento de MontÃ­culo N() sobre arr[]
         public static void heapsort(int[] arr){
             // implementar el Array como  cola de prioridad e inicializarla 
             int n = arr.length;
@@ -64,7 +64,7 @@ public class Main {
             }
         }
      
-        //Algoritmo de implementación en Java
+        //Algoritmo de implementaciÃ³n en Java
 
 	public static void main(String[] args) {
 		/*Metodo de ordenamiento Heapsort Monticulo
@@ -74,7 +74,7 @@ public class Main {
 		int[] arr = { 5,2,3,1,4,8,7,6,9,10 };
 		System.out.println("Array desornedado"+Arrays.toString(arr));
 		 heapsort(arr);
-         // print the sorted array
+         // mostrar el array ordenado
         System.out.println("Array Ordenado con el metodo Heapsort");
 		System.out.println(Arrays.toString(arr));
 
