@@ -10,7 +10,7 @@ public class Main {
     private static int HijoDrcho(int i) {
         return (2*i + 2);
     }
-    // Metodo para intercambiar  índices del Array arr[]
+    // Metodo para intercambiar  subíndices del Array arr[]
     private static void intercambio(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
@@ -52,7 +52,7 @@ public class Main {
      
         //Metodo Heapsort ordenamiento de Montículo N() sobre arr[]
         public static void heapsort(int[] arr){
-            // implementar el Array como  cola de prioridad e inicializarla 
+            // implementar el Array como  cola de prioridad
             int n = arr.length;
             int i = (n - 2) / 2;
             while (i >= 0) {
