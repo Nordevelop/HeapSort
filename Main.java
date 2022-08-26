@@ -2,7 +2,10 @@ package misClases;
 import java.util.Arrays;
 
 public class Main {
-	// devolver Hijo izquierdo del Arbol Binario
+	/* heapsort Sorting x monticulo
+	 * Author Nordevelop
+	 */
+	// devolver Hijo izquierdo del Arbol Binario #1
     private static int HijoIzqdo(int i) {
         return (2*i + 1);
     }
