@@ -5,7 +5,7 @@ public class Main {
 	/* heapsort Sorting x monticulo
 	 * Author Nordevelop
 	 */
-	// devolver Hijo izquierdo del Arbol Binario #1
+	// devolver Hijo izquierdo del Arbol Binario 
     private static int HijoIzqdo(int i) {
         return (2*i + 1);
     }
@@ -18,7 +18,7 @@ public class Main {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
+    }//fin metodo intercambio
     private static void apilar(int[] arr, int i, int tamaño) {
         // Obtener los hijos izquierdo y derecho del nodo() en el índice arr[i]
         int izda = HijoIzqdo(i);
@@ -35,23 +35,19 @@ public class Main {
         if (mayor != i){ //mayor != i variable contador
             intercambio(arr, i, mayor);
             apilar(arr, mayor, tamaño);
-        }
-    }
-        // Función para eliminar un elemento con la mayor prioridad (presente en la raíz)
+        }//fin if
+    }//fin metodo apilar
+        // metodo para eliminar un elemento con la mayor prioridad (presente en la raíz del Arbol)
         public static int sacar(int[] arr, int tamaño){
             // si el monticulo no tiene Elementos
-            if (tamaño <= 0) {
+            if (tamaño <= 0) 
                 return -1;
-            }
-     
-            int tope = arr[0];
-     
-            // sustituir la raíz del montón por el último elemento del Array
-            
-            arr[0] = arr[tamaño-1];
+             int tope = arr[0];
+     	    // sustituir la raíz del montón por el último elemento del Array
+             arr[0] = arr[tamaño-1];
             apilar(arr, 0, tamaño - 1);
             return tope;
-        }
+        }//fin metodo sacar
      
         //Metodo Heapsort ordenamiento de Montículo N() sobre arr[]
         public static void heapsort(int[] arr){
@@ -64,22 +60,24 @@ public class Main {
             while (n > 0){
                 arr[n - 1] = sacar(arr, n);
                 n--;
-            }
-        }
+            }//fin while (n > 0)
+        }// fin metodo Heapsort
      
         //Algoritmo de implementación en Java
 
 	public static void main(String[] args) {
-		/*Metodo de ordenamiento Heapsort Monticulo
+		/*Metodo de ordenamiento Heapsort (Monticulo)
 		 * Implementacion de Arbol Binario
 		 * Author Nordevelop
 		 */
 		int[] arr = { 5,2,3,1,4,8,7,6,9,10 };
 		System.out.println("Array desornedado"+Arrays.toString(arr));
-		 heapsort(arr);
-         // mostrar el array ordenado
-        System.out.println("Array Ordenado con el metodo Heapsort");
-		System.out.println(Arrays.toString(arr));
+		sacar(arr);
+		System.out.println("se elimino un elemento del Array arr: ");
+		System.out.println("Array "+Arrays.toString(arr));
+	        heapsort(arr); 
+                System.out.println("Array Ordenado con el metodo Heapsort");
+		System.out.println(Arrays.toString(arr)); // mostrar el array ordenado
 
 	}
 
